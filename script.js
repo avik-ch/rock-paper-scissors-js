@@ -27,3 +27,17 @@ function getHumanChoice() {
     }
 }
 
+let humanScore = computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === (computerChoice + 1) % 3) {
+        console.log(`You win! ${options[humanChoice]} beats ${options[computerChoice]}`);
+        humanScore++;
+    } else {
+        console.log(`You lose! ${options[computerChoice]} beats ${options[humanChoice]}`);
+        computerScore++;
+    }
+}
+
+
+
