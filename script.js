@@ -27,8 +27,20 @@ function getHumanChoice() {
     }
 }
 
+
+// Variables to store scores
 let humanScore = computerScore = 0;
 
+/***
+ * Function for playing out one round of game.
+ * 
+ * Checks for choices and outputs appropriate message.
+ * 
+ * First checks if both entered the same choice, resulting in draw.
+ * Then checks for adjacent choices in options array. If element
+ * is one higher in the index of the array, then it is a win, else 
+ * loss.
+ */
 function playRound(humanChoice, computerChoice) {
     let humanChoiceWord = options[humanChoice].charAt(0).toUpperCase() + options[humanChoice].slice(1);
     let computerChoiceWord = options[computerChoice].charAt(0).toUpperCase() + options[computerChoice].slice(1);
@@ -43,7 +55,12 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-
+/***
+ * Function to run the game
+ * 
+ * Plays five rounds of the game by calling playRound and
+ * then outputs an appropriate message based on who won.
+ */
 function playGame() {
     for (let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice());
@@ -59,5 +76,7 @@ function playGame() {
     }
 }
 
+
+// Runs the game
 playGame();
 
