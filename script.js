@@ -35,6 +35,7 @@ const gameButtons = document.querySelector(".img-container");
 const resetButton = document.querySelector(".btn");
 const gameOverSection = document.querySelector(".game-over-section")
 const winnerDeclaration = document.querySelector("#winner-declaration")
+const gameStatus = document.querySelector(".round-status")
 
 function gameOver() {
     gameButtons.style.display = "none";
@@ -74,12 +75,12 @@ function playRound(humanChoice, computerChoice) {
     let humanChoiceWord = options[humanChoice].charAt(0).toUpperCase() + options[humanChoice].slice(1);
     let computerChoiceWord = options[computerChoice].charAt(0).toUpperCase() + options[computerChoice].slice(1);
     if (humanChoice === computerChoice) {
-        console.log(`Tie! You both pick ${humanChoiceWord}`);
+        gameStatus.textContent = `Tie! You both pick ${humanChoiceWord}!`;
     } else if (humanChoice === (computerChoice + 1) % 3) {
-        console.log(`You win! ${humanChoiceWord} beats ${computerChoiceWord}`);
+        gameStatus.textContent = `You win! ${humanChoiceWord} beats ${computerChoiceWord}!`;
         humanScore++;
     } else {
-        console.log(`You lose! ${humanChoiceWord} beats ${computerChoiceWord}`);
+        gameStatus.textContent = `You lose! ${humanChoiceWord} beats ${computerChoiceWord}!`;
         computerScore++;
     }
     updateScores();
@@ -107,32 +108,6 @@ resetButton.addEventListener("click", () => {
     gameButtons.style.display = "flex";
     gameOverSection.style.display = "none";
     humanScore = computerScore = 0;
+    gameStatus.textContent = "Choose your weapon!"
     updateScores();
 })
-
-
-/**
- * Function to run the game
- * 
- * Plays five rounds of the game by calling playRound and
- * then outputs an appropriate message based on who won.
- */
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
-    }
-
-    console.log("Game over!");
-    if (humanScore > computerScore) {
-        console.log("You win!");
-    } else if (computerScore > humanScore) {
-        console.log("You lost.");
-    } else {
-        console.log("Game ended in a draw.");
-    }
-}
-
-
-// Runs the game
-// playGame();
-
