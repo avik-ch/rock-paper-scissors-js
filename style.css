@@ -41,10 +41,26 @@ img {
     max-width: 10rem;
     border-radius: 50%;
     filter: grayscale(50%) invert(100%);
+    cursor: pointer;
 }
 
 img:hover {
     filter: none;
+}
+
+.game-over-section {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+#game-over-text {
+    font-size: 6rem;
+    margin: auto;
 }
 
 .score-section {
@@ -73,4 +89,5 @@ img:hover {
     padding: 15px;
     border-radius: 20px;
     margin-top: 30px;
+    cursor: pointer;
 }

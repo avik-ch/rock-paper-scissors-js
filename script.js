@@ -1,6 +1,6 @@
 let options = ["rock", "paper", "scissor"];
 
-/***
+/**
  * Function to select choice for computer.
  * 
  * Generates a random number between 0 and 3 (exclusive) as index 
@@ -11,7 +11,7 @@ function getComputerChoice() {
 }
 
 
-/***
+/**
  * Function to select choice for user
  * 
  * Prompts user for input and checks if it is valid
@@ -27,21 +27,40 @@ function getHumanChoice() {
     }
 }
 
-
 // Variables to store scores
 let humanScore = computerScore = 0;
+
+// Query Selectors
+const gameButtons = document.querySelector(".img-container");
+const resetButton = document.querySelector(".btn");
+const gameOverSection = document.querySelector(".game-over-section")
+const winnerDeclaration = document.querySelector("#winner-declaration")
+
+function gameOver() {
+    gameButtons.style.display = "none";
+    let message = " win";
+    if (humanScore == 5) {
+        message = "You" + message + "!";
+    } else message = "Computer" + message + "s!";
+    winnerDeclaration.textContent = message;
+    gameOverSection.style.display = "flex";
+}
+
+
 
 function updateScores() {
     const playerScore = document.querySelector("#player-score");
     const compScore = document.querySelector("#computer-score");
     playerScore.textContent = humanScore;
     compScore.textContent = computerScore;
-    if (Math.max(playerScore, compScore) === 5) {
+    
+    if (Math.max(humanScore, computerScore) == 5) {
         gameOver();
     }
 }
 
-/***
+
+/**
  * Function for playing out one round of game.
  * 
  * Checks for choices and outputs appropriate message.
@@ -66,9 +85,8 @@ function playRound(humanChoice, computerChoice) {
     updateScores();
 }
 
-const buttons = document.querySelector(".img-container");
 
-buttons.addEventListener("click", (event) => {
+gameButtons.addEventListener("click", (event) => {
     const button = event.target.closest(".img-button");
 
     switch (button.id) {
@@ -85,7 +103,15 @@ buttons.addEventListener("click", (event) => {
 });
 
 
-/***
+resetButton.addEventListener("click", () => {
+    gameButtons.style.display = "flex";
+    gameOverSection.style.display = "none";
+    humanScore = computerScore = 0;
+    updateScores();
+})
+
+
+/**
  * Function to run the game
  * 
  * Plays five rounds of the game by calling playRound and
