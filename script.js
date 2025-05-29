@@ -31,6 +31,16 @@ function getHumanChoice() {
 // Variables to store scores
 let humanScore = computerScore = 0;
 
+function updateScores() {
+    const playerScore = document.querySelector("#player-score");
+    const compScore = document.querySelector("#computer-score");
+    playerScore.textContent = humanScore;
+    compScore.textContent = computerScore;
+    if (Math.max(playerScore, compScore) === 5) {
+        gameOver();
+    }
+}
+
 /***
  * Function for playing out one round of game.
  * 
@@ -53,6 +63,7 @@ function playRound(humanChoice, computerChoice) {
         console.log(`You lose! ${humanChoiceWord} beats ${computerChoiceWord}`);
         computerScore++;
     }
+    updateScores();
 }
 
 const buttons = document.querySelector(".img-container");
