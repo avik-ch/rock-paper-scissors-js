@@ -11,22 +11,6 @@ function getComputerChoice() {
 }
 
 
-/**
- * Function to select choice for user
- * 
- * Prompts user for input and checks if it is valid
- * Returns index of that choice in options
- */
-function getHumanChoice() {
-    while (true) {
-        let userChoice = prompt("Enter your choice: ").toLowerCase();
-        if (options.includes(userChoice)) {
-            return options.indexOf(userChoice);
-        }
-        console.log("Invalid choice, try again. Choices are 'rock', 'paper', and 'scissor'");
-    }
-}
-
 // Variables to store scores
 let humanScore = computerScore = 0;
 
