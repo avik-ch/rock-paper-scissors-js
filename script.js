@@ -64,7 +64,7 @@ function playRound(humanChoice, computerChoice) {
         gameStatus.textContent = `You win! ${humanChoiceWord} beats ${computerChoiceWord}!`;
         humanScore++;
     } else {
-        gameStatus.textContent = `You lose! ${humanChoiceWord} beats ${computerChoiceWord}!`;
+        gameStatus.textContent = `You lose! ${computerChoiceWord} beats ${humanChoiceWord}!`;
         computerScore++;
     }
     updateScores();
