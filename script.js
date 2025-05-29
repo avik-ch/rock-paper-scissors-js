@@ -55,6 +55,25 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+const buttons = document.querySelector(".img-container");
+
+buttons.addEventListener("click", (event) => {
+    const button = event.target.closest(".img-button");
+
+    switch (button.id) {
+        case "rock":
+            playRound(0, getComputerChoice());
+            break;
+        case "paper":
+            playRound(1, getComputerChoice());
+            break;
+        case "scissor":
+            playRound(2, getComputerChoice());
+            break;
+    }
+});
+
+
 /***
  * Function to run the game
  * 
