@@ -1,0 +1,76 @@
+* {
+    font-family: "Silkscreen", sans-serif;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+.title {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.img-container {
+    margin: 50px 15px;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-weight: 500;
+}
+
+.img-button {
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: fit-content;
+    max-width: 10rem;
+    border-radius: 50%;
+    filter: grayscale(50%) invert(100%);
+}
+
+img:hover {
+    filter: none;
+}
+
+.score-section {
+    justify-content: center;
+    gap: 20px;
+}
+
+.score-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2in;
+}
+
+.score-title {
+    font-size: 2rem;
+}
+
+.rounds-won {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.btn {
+    width: fit-content;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 30px;
+}

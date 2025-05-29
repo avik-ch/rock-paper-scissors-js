@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script type="text/javascript" src="./script.js" defer></script>
 </head>
-<body>
+<body class="flex">
+    <div class="flex title">
+        <h1>Rock Paper Scissors</h1>
+        You vs computer
+    </div>
     <div class="flex img-container">
         <div class="flex img-button" id="rock">
             <img src="./images/rock.png" alt="hand gesture rock">
@@ -22,5 +29,16 @@
             Scissor
         </div>
     </div>
+    <div class="flex score-section">
+        <div class="flex score-container">
+            <div class="score-title">Player</div>
+            <div class="rounds-won">0</div>
+        </div>
+        <div class="flex score-container">
+            <div class="score-title">Computer</div>
+            <div class="rounds-won">0</div>
+        </div>
+    </div>
+    <button class="btn">Reset</button>
 </body>
 </html>
