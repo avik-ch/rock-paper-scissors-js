@@ -58,9 +58,16 @@ img:hover {
     margin-bottom: 30px;
 }
 
+
 #game-over-text {
     font-size: 6rem;
     margin: auto;
+}
+
+#winner-declaration {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
 .score-section {
